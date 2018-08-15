@@ -1,0 +1,9 @@
+div#buttons {
+    float: right;
+}
+#chat .row .col-md-3 button {
+    margin-top: 30px;
+}
+button {
+    margin-right: 10px;
+}
