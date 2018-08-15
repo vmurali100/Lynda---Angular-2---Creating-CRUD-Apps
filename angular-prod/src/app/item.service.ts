@@ -28,4 +28,8 @@ export class ItemService {
     this.itemDoc = this.db.doc(`items/${item.id}`);
     this.itemDoc.delete();
   }
+  updateitem(item){
+    this.itemDoc = this.db.doc(`items/${item.id}`);
+    this.itemDoc.update(item)
+  }
 }
