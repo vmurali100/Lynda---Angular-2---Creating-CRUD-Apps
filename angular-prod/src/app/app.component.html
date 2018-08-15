@@ -1,5 +1,9 @@
-<ul>
-    <li class="text" *ngFor="let item of items | async">
-      {{item.name}}
+<div class="container">
+  <app-add-item></app-add-item>
+  <hr>
+  <ul>
+    <li class="text" *ngFor="let item of items | async" (dblclick)="deleteItem($event,item)">
+      {{item.title}}
     </li>
   </ul>
+</div>

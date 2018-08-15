@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
-import { Observable } from 'rxjs';
+import { ItemService } from './item.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,11 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   title = 'angular-prod';
-  items: Observable<any[]>;
-
-  constructor(private db: AngularFirestore){
-    this.items = db.collection('items').valueChanges();
+  items;
+  constructor(private itemService:ItemService){
+    this.items = this.itemService.items;
+   }
+   deleteItem(event,item){
+    this.itemService.deleteItem(item)
   }
 }
